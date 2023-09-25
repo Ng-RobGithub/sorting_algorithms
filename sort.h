@@ -45,6 +45,7 @@ void counting_sort(int *array, size_t size);
 
 /*7. Merge sort */
 void merge_sort(int *array, size_t size);
+void merge(int *array, int *left, size_t left_size, int *right, size_t right_size);
 
 /* 8. Heap sort */
 void heap_sort(int *array, size_t size);
@@ -68,6 +69,21 @@ void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 
 /* swap_nodes in a doubly linked list*/
+
+/* find_max_value - Finds the maximum value in an array of integers. */
+int find_max_value(int *array, size_t size);
+
+/* create_counting_array - Creates a counting array for counting sort. */
+int *create_counting_array(int *array, size_t size, int max_value);
+
+/* update_cumulative_counts - Updates the cumulative counts in the counting array. */
+void update_cumulative_counts(int *counting_array, int max_value);
+
+/* create_sorted_array - Creates a sorted array using the counting array. */
+int *create_sorted_array(int *array, size_t size, int *counting_array);
+
+/* copy_sorted_array - Copies the sorted array back to the original array. */
+void copy_sorted_array(int *array, int *sorted_array, size_t size);
 
 /* Data structures (if needed) */
 
