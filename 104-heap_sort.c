@@ -1,5 +1,10 @@
 #include "sort.h"
 
+void swap_ints(int *a, int *b);
+void heapify(int *array, size_t size, size_t index);
+void heap_sort(int *array, size_t size);
+
+
 /**
  * swap - Swap two integers in an array.
  * @a: Pointer to the first integer.
