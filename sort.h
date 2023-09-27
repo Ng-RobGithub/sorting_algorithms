@@ -51,7 +51,7 @@ void merge_sort_recursive(int *subarr, int *buff, size_t front, size_t back);
 /* 8. Heap sort */
 void heap_sort(int *array, size_t size);
 void swap_ints(int *a, int *b);
-void heapify(int *array, size_t size, size_t index);
+void heapify(int *array, size_t size, size_t n, size_t root);
 
 /* 9. Radix sort */
 void radix_sort(int *array, size_t size);

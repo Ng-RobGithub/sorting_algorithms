@@ -1,49 +1,56 @@
 #include "sort.h"
 
 /**
- * swap - Swap two integers in an array.
- * @a: Pointer to the first integer.
- * @b: Pointer to the second integer.
+ * swap_ints - Swap two integers in an array.
+ * @a: The first integer to swap.
+ * @b: The second integer to swap.
  */
-void swap(int *a, int *b)
+void swap_ints(int *a, int *b)
 {
-	int tmp = *a;
+	int tmp;
+
+	tmp = *a;
 	*a = *b;
 	*b = tmp;
 }
 
 /**
- * heapify - Rearranges the elements of an array into a max-heap.
- * @array: The input array.
- * @size: The size of the heap.
- * @index: The index to start the heapify process from.
+ * heapify - Turn a binary tree into a complete binary heap.
+ * @array: An array of integers representing a binary tree.
+ * @size: The size of the array/tree.
+ * @n: The number of elements in the heap.
+ * @root: The root node of the binary tree.
  */
-void heapify(int *array, size_t size, size_t index)
+void heapify(int *array, size_t size, size_t n, size_t root)
 {
 	size_t largest, left, right;
 
-	largest = index;
-	left = 2 * index + 1;
-	right = 2 * index + 2;
+	largest = root;
+	left = 2 * root + 1;
+	right = 2 * root + 2;
 
-	if (left < size && array[left] > array[largest])
+	if (left < n && array[left] > array[largest])
 		largest = left;
 
-	if (right < size && array[right] > array[largest])
+	if (right < n && array[right] > array[largest])
 		largest = right;
 
-	if (largest != index)
+	if (largest != root)
 	{
-		swap(&array[index], &array[largest]);
+		swap_ints(&array[root], &array[largest]);
 		print_array(array, size);
-		heapify(array, size, largest);
+		heapify(array, size, n, largest);
 	}
 }
 
 /**
- * heap_sort - Sorts an array of integers in ascending order using Heap Sort.
- * @array: The input array.
+ * heap_sort - Sort an array of integers in ascending
+ * order using the heap sort algorithm.
+ * @array: An array of integers.
  * @size: The size of the array.
+ *
+ * Description: Implements the heap sort algorithm.
+ * Prints the array after each swap.
  */
 void heap_sort(int *array, size_t size)
 {
@@ -53,12 +60,12 @@ void heap_sort(int *array, size_t size)
 		return;
 
 	for (i = size / 2 - 1; i >= 0; i--)
-		heapify(array, size, i);
+		heapify(array, size, size, i);
 
 	for (i = size - 1; i > 0; i--)
 	{
-		swap(&array[0], &array[i]);
+		swap_ints(&array[0], &array[i]);
 		print_array(array, size);
-		heapify(array, i, 0);
+		heapify(array, size, i, 0);
 	}
 }
