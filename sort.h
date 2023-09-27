@@ -52,7 +52,6 @@ void merge_sort_recursive(int *subarr, int *buff, size_t front, size_t back);
 void heap_sort(int *array, size_t size);
 void swap_ints(int *a, int *b);
 void heapify(int *array, size_t size, size_t index);
-void heap_sort(int *array, size_t size);
 
 /* 9. Radix sort */
 void radix_sort(int *array, size_t size);
@@ -76,6 +75,7 @@ void print_list(const listint_t *list);
 
 /* find_max_value - Finds the maximum value in an array of integers. */
 int find_max_value(int *array, size_t size);
+int get_max(int *array, size_t size);
 
 /* create_counting_array - Creates a counting array for counting sort. */
 int *create_counting_array(int *array, size_t size, int max_value);
