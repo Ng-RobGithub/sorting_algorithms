@@ -27,7 +27,9 @@ void swap_ints(int *a, int *b)
 void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
 		char flow)
 {
-	size_t i, jump = seq / 2;
+	size_t i, jump;
+
+	jump = seq / 2;
 
 	if (seq > 1)
 	{
@@ -52,8 +54,11 @@ void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
  */
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow)
 {
-	size_t cut = seq / 2;
-	char *str = (flow == UP) ? "UP" : "DOWN";
+	size_t cut;
+	char *str;
+
+	cut = seq / 2;
+	str = (flow == UP) ? "UP" : "DOWN";
 
 	if (seq > 1)
 	{
