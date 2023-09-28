@@ -62,6 +62,8 @@ void bitonic_merge(int *array, size_t size, size_t start, size_t seq, char flow)
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
 /* 11. Quick Sort - Hoare Partition scheme */
 void quick_sort_hoare(int *array, size_t size);
+int hoare_partition(int *array, size_t size, int left, int right);
+void hoare_quick_sort(int *array, size_t size, int left, int right);
 
 /* 12. Dealer ( sort deck of cards) */
 void sort_deck(deck_node_t **deck);
