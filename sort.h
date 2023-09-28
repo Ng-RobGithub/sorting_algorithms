@@ -67,7 +67,9 @@ void hoare_quick_sort(int *array, size_t size, int left, int right);
 
 /* 12. Dealer ( sort deck of cards) */
 void sort_deck(deck_node_t **deck);
-
+int _strcmp(const char *s1, const char *s2);
+int get_value(deck_node_t *card);
+void insertion_sort_deck(deck_node_t **deck);
 /* Print an array of integers */
 void print_array(const int *array, size_t size);
 
