@@ -58,10 +58,8 @@ void radix_sort(int *array, size_t size);
 
 /* 10. Bitonic sort */
 void bitonic_sort(int *array, size_t size);
-void swap(int *array, int i, int j);
-void bitonic_merge(int *array, size_t size, size_t start, size_t seq, int dir);
-void bitonic_sort_recursive(int *array, size_t size, size_t start, size_t seq, int dir);
-
+void bitonic_merge(int *array, size_t size, size_t start, size_t seq, char flow);
+void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
 /* 11. Quick Sort - Hoare Partition scheme */
 void quick_sort_hoare(int *array, size_t size);
 
